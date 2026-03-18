@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Hello It’s Me</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <header>
@@ -18,8 +19,13 @@
         </nav>
     </header>
     <main>
-        <section id="home">
+        <!-- <section id="home">
+            <div class="profile-img-wrapper">
+                  <div class="blue-circle"></div>
             <img src="./Assets/IMG_20260105_131719_147-removebg-preview.png" alt="Profile Picture of Dinesh Tharusha">
+            <div class="outer-glow"></div>
+         </div>
+
             <h1>Hello It's Me Dinesh Tharusha</h1>
             <h2>And I'm a <span>full-stack Software Developer</span></h2>
             <p>A passionate Software Developer dedicated to crafting innovative, high-impact solutions that push boundaries and solve real-world problems..</p>
@@ -30,8 +36,41 @@
                 <li><a href="https://facebook.com">Facebook</a></li>
                 <li><a href="https://twitter.com">Twitter</a></li>
             </ul>
-        </section>
-        <section id="about">
+        </section> -->
+
+
+<section id="home">
+    <div class="profile-img-wrapper">
+        <img src="./Assets/IMG_20260105_131719_147-removebg-preview.png" alt="Dinesh Tharusha">
+        <div class="blue-ring"></div>
+    </div>
+    
+    <div class="home-content">
+        <h1>Dinesh Tharusha</h1>
+        <h2>And I'm a <span>Full-Stack Developer</span></h2>
+        <p>Hi, I'm Dinesh Tharusha, a passionate Software Developer focused on building innovative and impactful solutions.</p>
+        
+        <div class="social-icons">
+            <a href="https://facebook.com" target="_blank" class="social-icon">
+                <img src="./Assets/Component 1-1.png" alt="Facebook Icon">
+            </a>
+            <a href="https://github.com" target="_blank" class="social-icon">
+                <img src="./Assets/Component 4-1.png" alt="GitHub Icon">
+            </a>
+            <a href="https://linkedin.com" target="_blank" class="social-icon">
+                <img src="./Assets/Component 2.png" alt="LinkedIn Icon">
+            </a>
+            <a href="https://whatsapp.com" target="_blank" class="social-icon">
+                <img src="./Assets/Component 3-1.png" alt="WhatsApp Icon">
+            </a>
+        </div>
+        
+        <a href="cv.pdf" download class="download-btn">
+            <i class="fas fa-download"></i> Download CV
+        </a>
+    </div>
+</section>
+        <!-- <section id="about">
             <h2>About Me</h2>
             <p>Software Developer</p>
             <p>I'm a passionate Software Developer and web designer, skilled in Java, MySQL, UI/UX design. Focused on creating user-friendly, functional solutions with a passion for new challenges.</p>
@@ -44,7 +83,33 @@
                 <dt>Address :</dt>
                 <dd>25/2,Makurugoda road,Baddegama, Sri Lanka</dd>
             </dl>
-        </section>
+        </section> -->
+   <section id="about">
+     <h2>About Me</h2>
+      <div class="about-container">
+        <div class="about-text">
+            <p class="about-subtitle">Software Developer</p>
+            <p>I'm a passionate Software Developer and web designer, skilled in Java, MySQL, UI/UX design. Focused on creating user-friendly, functional solutions with a passion for new challenges.</p>
+            <dl>
+                <dt>Position :</dt>
+                <dd>Software Engineer</dd>
+                <br>
+                <dt>Date of Birth :</dt>
+                <dd>2001 April 17</dd>
+                <br>
+                <dt>Address :</dt>
+                <dd>25/2, Makurugoda road, Baddegama, Sri Lanka</dd>
+            </dl>
+            </div>
+           <div class="about-image">
+               <div class="profile-img-wrapper">
+                <img src="./Assets/IMG_20260105_131719_147-removebg-preview.png" alt="About Me">
+                <div class="blue-ring"></div>
+              </div>
+         </div>
+      </div>
+    </section>
+
         <section id="resume">
             <h2>Resume</h2>
             <p>Transforming ideas into code, solving complex problems, and building innovative solutions - my journey as a software engineer is fueled by curiosity, persistence and constant learning.</p>
@@ -240,12 +305,82 @@
             </address>
         </section>
         <p>&copy; 2026 Dinesh Tharusha. All rights reserved.</p>
-        <ul>
-            <li><a href="https://linkedin.com">LinkedIn</a></li>
-            <li><a href="https://whatsapp.com">Whatsapp</a></li>
-            <li><a href="https://facebook.com">Facebook</a></li>
-            <li><a href="https://twitter.com">Twitter</a></li>
-        </ul>
+        <ul class="social-icons">
+    <li>
+        <a href="https://linkedin.com" target="_blank" class="social-icon">
+            <img src="./Assets/Component 2.png" alt="LinkedIn">
+        </a>
+    </li>
+    <li>
+        <a href="https://whatsapp.com" target="_blank" class="social-icon">
+            <img src="./Assets/Component 3-1.png" alt="WhatsApp">
+        </a>
+    </li>
+    <li>
+        <a href="https://facebook.com" target="_blank" class="social-icon">
+            <img src="./Assets/Component 1-1.png" alt="Facebook">
+        </a>
+    </li>
+    <li>
+        <a href="https://github.com" target="_blank" class="social-icon">
+            <img src="./Assets/Component 4-1.png" alt="GitHub">
+        </a>
+    </li>
+</ul>
     </footer>
+
+
+    <!-- Mobile Menu Toggle (hamburger) -->
+<div class="menu-toggle">
+    <i class="fas fa-bars"></i>
+</div>
+
+<!-- Mobile Sidebar (left side) -->
+  <div class="sidebar">
+    <div class="sidebar-header">
+        <div class="sidebar-profile-img">
+            <img src="./Assets/IMG_20260105_131719_147-removebg-preview.png" alt="Dinesh Tharusha">
+        </div>
+        <h3 class="sidebar-profile-name">Dinesh Tharusha</h3>
+        <p class="sidebar-profile-title">Full-Stack Developer</p>
+     </div>
+    
+     <nav class="sidebar-nav">
+        <ul>
+            <li><a href="#home" class="active"><i class="fas fa-home"></i> Home</a></li>
+            <li><a href="#about"><i class="fas fa-user"></i> About</a></li>
+            <li><a href="#resume"><i class="fas fa-file-alt"></i> Resume</a></li>
+            <li><a href="#skills"><i class="fas fa-code"></i> Skills</a></li>
+            <li><a href="#projects"><i class="fas fa-laptop-code"></i> Projects</a></li>
+            <li><a href="#gallery"><i class="fas fa-images"></i> Gallery</a></li>
+            <li><a href="#contact"><i class="fas fa-envelope"></i> Contact</a></li>
+        </ul>
+     </nav>
+    
+   <div class="sidebar-social">
+    <a href="https://linkedin.com" target="_blank" class="sidebar-social-icon">
+        <img src="./Assets/Component 2.png" alt="LinkedIn">
+    </a>
+    <a href="https://github.com" target="_blank" class="sidebar-social-icon">
+        <img src="./Assets/Component 4-1.png" alt="GitHub">
+    </a>
+    <a href="https://whatsapp.com" target="_blank" class="sidebar-social-icon">
+        <img src="./Assets/Component 3-1.png" alt="WhatsApp">
+    </a>
+    <a href="https://facebook.com" target="_blank" class="sidebar-social-icon">
+        <img src="./Assets/Component 1-1.png" alt="Facebook">
+    </a>
+   
+</div>
+    
+    <div class="sidebar-footer">
+        <p>&copy; 2026 Dinesh Tharusha</p>
+    </div>
+  </div>
+
+   <!-- Overlay for mobile -->
+   <div class="overlay"></div>
+
+    <script src="Script.js"></script>
 </body>
 </html>
