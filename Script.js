@@ -26,18 +26,6 @@ function initMobileMenu() {
         sidebar.classList.toggle('active');
         overlay.classList.toggle('active');
 
-       
-        const icon = this.querySelector('i');
-        if (icon) {
-            if (icon.classList.contains('fa-bars')) {
-                icon.classList.remove('fa-bars');
-                icon.classList.add('fa-times');
-            } else {
-                icon.classList.remove('fa-times');
-                icon.classList.add('fa-bars');
-            }
-        }
-
         document.body.style.overflow = sidebar.classList.contains('active') ? 'hidden' : '';
     });
 
@@ -78,11 +66,6 @@ function initMobileMenu() {
         menuToggle.classList.remove('active');
         sidebar.classList.remove('active');
         overlay.classList.remove('active');
-        const icon = menuToggle.querySelector('i');
-        if (icon) {
-            icon.classList.remove('fa-times');
-            icon.classList.add('fa-bars');
-        }
         document.body.style.overflow = '';
     }
 }
@@ -138,22 +121,51 @@ function initFormSubmit() {
     const form = document.getElementById('contactForm');
     if (!form) return;
 
+    // Initialize EmailJS with  Public Key
+    emailjs.init("DUwmiJpmJtMzotf2i");   
+
     form.addEventListener('submit', function(e) {
         e.preventDefault();
 
-       
-        const name = document.getElementById('name')?.value.trim();
-        const email = document.getElementById('email')?.value.trim();
-        const subject = document.getElementById('subject')?.value.trim();
-        const message = document.getElementById('message')?.value.trim();
+        const submitBtn = form.querySelector('button');
+        const originalBtnText = submitBtn.textContent;
 
-        if (!name || !email || !subject || !message) {
+        // Show loading state
+        submitBtn.textContent = "Sending...";
+        submitBtn.disabled = true;
+
+        const name = document.getElementById('name').value.trim();
+        const contact = document.getElementById('contact').value.trim();
+        const email = document.getElementById('email').value.trim();
+        const message = document.getElementById('message').value.trim();
+
+        if (!name || !contact || !email || !message) {
             alert('Please fill in all fields.');
+            submitBtn.textContent = originalBtnText;
+            submitBtn.disabled = false;
             return;
         }
 
-        alert('Thank you for your message! I will get back to you soon.');
-        form.reset();
+        // Send email using EmailJS
+        emailjs.send("service_ywqwpio", "template_yor8rbg", {
+            from_name: name,
+            from_email: email,
+            contact_number: contact,
+            message: message,
+            to_email: "dineshtharusha@gmail.com"   // Your email
+        })
+        .then(() => {
+            alert(`✅ Thank you, ${name}!\n\nYour message has been sent successfully. I will reply soon!`);
+            form.reset();
+        })
+        .catch((error) => {
+            console.error('EmailJS Error:', error);
+            alert('Failed to send message. Please check your internet connection and try again.');
+        })
+        .finally(() => {
+            submitBtn.textContent = originalBtnText;
+            submitBtn.disabled = false;
+        });
     });
 }
 
